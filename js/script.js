@@ -112,7 +112,6 @@ form.addEventListener('submit', e => {
     const target = 'php/submit.php'
 
     const xhr = new XMLHttpRequest();
-    console.log(formatParams(params));
     xhr.open("POST", target,    true);
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhr.send(formatParams(params));
@@ -121,7 +120,6 @@ form.addEventListener('submit', e => {
         if (xhr.status === 200) {
             tbody.innerHTML = xhr.response;
         } else {
-            console.log("status: ", xhr.status);
             if (xhr.status >= 400 && xhr.status < 600) {
                 errorMessageBox.textContent = `An error has occurred: ${xhr.status} - ${xhr.statusText}`;
             }
@@ -139,7 +137,6 @@ clearBtn.addEventListener("click", e => {
         if (xhr.status === 200) {
             tbody.innerHTML = '';
         } else {
-            console.log("status: ", xhr.status);
             if (xhr.status >= 400 && xhr.status < 600) {
                 errorMessageBox.textContent = `An error has occurred: ${xhr.status} - ${xhr.statusText}`;
             }
@@ -158,7 +155,6 @@ window.onload = () => {
             const tbody = document.querySelector('.main__table tbody');
             tbody.innerHTML = xhr.response;
         } else {
-            console.log("status: ", xhr.status);
             if (xhr.status >= 400 && xhr.status < 600) {
                 errorMessageBox.textContent = `An error has occurred: ${xhr.status} - ${xhr.statusText}`;
             }
