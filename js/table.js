@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error("Element '.main__table tbody' not found.");
             }
         } else {
-            console.log("status: ", xhr.status);
             if (xhr.status >= 400 && xhr.status < 600) {
                 alert(`An error has occurred: ${xhr.status} - ${xhr.statusText}`);
             }
@@ -34,7 +33,6 @@ clearBtn.addEventListener("click", e => {
                 console.error("Element '.main__table tbody' not found.");
             }
         } else {
-            console.log("status: ", xhr.status);
             if (xhr.status >= 400 && xhr.status < 600) {
                 alert(`An error has occurred: ${xhr.status} - ${xhr.statusText}`);
             }
